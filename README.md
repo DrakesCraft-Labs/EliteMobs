@@ -3,6 +3,28 @@
 
 # EliteMobs
 
+> **Fork DrakesCraft Labs.** Esta rama conserva la autoria y licencia GPL-3.0 de MagmaGuy y agrega una integracion
+> defensiva para Purpur 1.21.11. No reemplaza DrakesBosses, DiosesDrakes ni MultiverseCreatures.
+
+## Integracion DrakesCraft
+
+EliteMobs aporta plantillas, poderes e IA. DrakesBosses sigue siendo la autoridad de sesiones, arenas, recompensas y
+spawns; DiosesDrakes conserva la progresion del panteon y MultiverseCreatures conserva a Mahoraga y criaturas especiales.
+
+El servicio `DrakesEliteMobsBridge` se descubre mediante Bukkit `ServicesManager` y solo intercambia tipos Bukkit. Su
+archivo `plugins/EliteMobs/drakes-integration.yml` nace con `enabled: false` y una lista de plantillas vacia: instalar el
+JAR no habilita bosses, loot ni economia. Para activarlo en pruebas hay que declarar explicitamente:
+
+- plugin propietario confiable;
+- prefijo del mundo de arena;
+- nombre exacto de cada plantilla permitida.
+
+Las entidades reclamadas llevan propietario persistente. Al morir, EliteMobs elimina su loot y experiencia propios para
+que DrakesBosses sea la unica autoridad de recompensas y no exista duplicacion.
+
+**Estado:** compilado para pruebas aisladas. No desplegar directamente en produccion junto al sistema completo de
+EliteMobs; sus quests, economia, spawns naturales, shops y progresion se solapan con la plataforma actual.
+
 EliteMobs is a Spigot/Paper plugin built around custom bosses. On top of the boss system it adds an interlocking set of
 RPG-style features: quests, arenas, dungeons, custom and procedurally generated items and enchantments, an in-game
 economy, player progression and skills, NPCs, and shops.
@@ -33,6 +55,17 @@ economy, player progression and skills, NPCs, and shops.
   PlaceholderAPI, HolographicDisplays, DiscordSRV, LibsDisguises, ModelEngine, Geyser-Spigot, MythicMobs, LevelledMobs,
   InfernalMobs, FreeMinecraftModels. Vault is required for economy features; the others enable the corresponding
   integration when present.
+
+### Build reproducible del fork
+
+Los repositorios Maven publicos de MagmaGuy no contienen todavia las revisiones que usa `master`. Antes de compilar,
+publica en Maven Local estas revisiones de sus fuentes oficiales:
+
+- `MagmaCore` `27ce503321359f158fb4874752378ea2e4d629df`;
+- `EasyMinecraftGoals` `79fd06202bad5d7bd4ff682e590eae12ca8874b5`.
+
+Luego ejecuta `./gradlew clean test shadowJar`. El artefacto final queda en `build/libs/EliteMobs.jar`. No se versionan
+binarios ni credenciales para ocultar esta deuda upstream.
 
 ## Installation
 

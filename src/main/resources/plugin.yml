@@ -1,6 +1,7 @@
 name: EliteMobs
-version: 10.8.0
-author: MagmaGuy
+version: ${version}
+authors: [MagmaGuy, JackStar]
+website: https://github.com/DrakesCraft-Labs/EliteMobs
 main: com.magmaguy.elitemobs.EliteMobs
 api-version: '1.21.4'
 softdepend:
@@ -19,6 +20,9 @@ softdepend:
 - LevelledMobs
 - InfernalMobs
 - FreeMinecraftModels
+- DrakesBosses
+- DiosesDrakes
+- MultiverseCreatures
 
 commands:
   elitemobs:

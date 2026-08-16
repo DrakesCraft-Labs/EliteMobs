@@ -1,0 +1,17 @@
+# El puente permanece apagado hasta validar plantillas en un servidor de pruebas.
+enabled: false
+suppress-elite-loot-for-owned-bosses: true
+
+# Solo estos plugins pueden reclamar o crear entidades mediante el puente.
+trusted-owners:
+  - DrakesBosses
+  - MultiverseCreatures
+  - DiosesDrakes
+
+# Los mundos deben coincidir por prefijo. Nunca se habilita el Survival por defecto.
+allowed-world-prefixes:
+  - boss_arena
+  - drakes_bosses
+
+# Una lista vacia deniega todas las plantillas.
+allowed-templates: []

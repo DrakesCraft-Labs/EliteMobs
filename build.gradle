@@ -31,7 +31,7 @@ processResources {
 }
 
 group 'com.magmaguy'
-version '10.8.0'
+version '10.8.0-drake.1'
 
 repositories {
     maven {
@@ -120,6 +120,13 @@ dependencies {
     implementation (group: 'com.magmaguy', name: 'MagmaCore', version: '2.2.0-SNAPSHOT'){
         changing = true
     }
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }
 
 artifacts { // task 'build' runs generates uberjar

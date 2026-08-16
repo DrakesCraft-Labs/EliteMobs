@@ -7,6 +7,7 @@ package com.magmaguy.elitemobs;
 import com.magmaguy.easyminecraftgoals.NMSManager;
 import com.magmaguy.elitemobs.api.EMDungeonLocator;
 import com.magmaguy.elitemobs.api.EliteMobsInitializedEvent;
+import com.magmaguy.elitemobs.integrations.drakes.DrakesBridgeBootstrap;
 import com.magmaguy.elitemobs.collateralminecraftchanges.KeepNeutralsAngry;
 import com.magmaguy.elitemobs.collateralminecraftchanges.PlayerDeathMessageByEliteMob;
 import com.magmaguy.elitemobs.commands.CommandHandler;
@@ -253,6 +254,7 @@ public class EliteMobs extends JavaPlugin {
                         return;
                     }
                     MetadataHandler.pluginState = PluginState.INITIALIZED;
+                    DrakesBridgeBootstrap.register(this);
                     Bukkit.getPluginManager().callEvent(new EliteMobsInitializedEvent());
                     Logger.info("EliteMobs fully initialized!");
                     NightbreakPluginUpdater.autoDownloadPluginUpdateIfEnabled(this, NIGHTBREAK_PLUGIN_SPEC);
@@ -607,6 +609,7 @@ public class EliteMobs extends JavaPlugin {
     @Override
     public void onDisable() {
         MetadataHandler.shutdownRequested = true;
+        DrakesBridgeBootstrap.shutdown(this);
         CustomItem.shutdownCacheRegeneration();
         MagmaCore.requestInitializationShutdown(this);
         AutoclickerThrottle.shutdown();
