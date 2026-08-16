@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DrakesCraft-Labs/EliteMobs-Drake/main/banner.svg" width="100%" alt="EliteMobs Drake animated banner" />
+</p>
+
 [![Crowdin](https://badges.crowdin.net/elitemobs/localized.svg)](https://crowdin.com/project/elitemobs)
 [![BStats](https://bstats.org/signatures/bukkit/EliteMobs.svg)](https://bstats.org/plugin/bukkit/EliteMobs/1081)
 
