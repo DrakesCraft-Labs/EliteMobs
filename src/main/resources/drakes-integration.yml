@@ -1,3 +1,11 @@
+# EliteMobs dentro de DrakesCraft.
+#
+# El servidor ya tiene economia (Dragmas y Vault), misiones (Quests), tienda (Odysseia y Tebex)
+# y progresion de rangos (LuckPerms). De EliteMobs solo interesa su motor de mobs: la IA, los
+# poderes y las plantillas. Con esto en true se apagan sus sistemas propios para que no compitan
+# con los que ya existen.
+solo-motor-de-mobs: true
+
 # El puente permanece apagado hasta validar plantillas en un servidor de pruebas.
 enabled: false
 suppress-elite-loot-for-owned-bosses: true

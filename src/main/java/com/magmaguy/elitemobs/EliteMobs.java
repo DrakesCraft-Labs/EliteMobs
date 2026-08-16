@@ -148,6 +148,8 @@ public class EliteMobs extends JavaPlugin {
     public Object placeholders = null;
 
     public static void initializeConfigs() {
+        // Antes que nada: decide si los sistemas propios de EliteMobs se apagan.
+        com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.load(MetadataHandler.PLUGIN);
         new CustomModelsConfig();
         new DefaultConfig();
         new ItemSettingsConfig();
@@ -431,7 +433,8 @@ public class EliteMobs extends JavaPlugin {
 
         //Initialize gambling system
         initializationContext.step("Gambling System");
-        if (GamblingConfig.isGamblingEnabled()) {
+        if (GamblingConfig.isGamblingEnabled()
+                && com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.economiaPropiaActiva()) {
             com.magmaguy.elitemobs.economy.GamblingEconomyHandler.initialize();
             com.magmaguy.elitemobs.gambling.DebtCollectorManager.initialize();
             com.magmaguy.elitemobs.gambling.GamblingDenOwnerDisplay.initialize();

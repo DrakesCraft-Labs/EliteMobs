@@ -64,14 +64,30 @@ public class CommandHandler {
         emCommand.registerCommand(new LanguageCommand());
         emCommand.registerCommand(new PlaceWormholeCommand());
         emCommand.registerCommand(new LootStats());
-        emCommand.registerCommand(new ShopProceduralOtherCommand());
-        emCommand.registerCommand(new ShopCustomOtherCommand());
-        emCommand.registerCommand(new ShopSellOtherCommand());
-        emCommand.registerCommand(new QuestBypassCommand());
-        emCommand.registerCommand(new QuestCompleteCommand());
-        emCommand.registerCommand(new QuestCompleteQuestCommand());
-        emCommand.registerCommand(new QuestResetCommand());
-        emCommand.registerCommand(new QuestResetAllCommand());
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.economiaPropiaActiva()) {
+            emCommand.registerCommand(new ShopProceduralOtherCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.economiaPropiaActiva()) {
+            emCommand.registerCommand(new ShopCustomOtherCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.economiaPropiaActiva()) {
+            emCommand.registerCommand(new ShopSellOtherCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestBypassCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestCompleteCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestCompleteQuestCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestResetCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestResetAllCommand());
+        }
         emCommand.registerCommand(new TransitiveBlocksCancelCommand());
         emCommand.registerCommand(new TransitiveBlocksRegisterCommand());
         emCommand.registerCommand(new TransitiveBlocksEditCommand());
@@ -115,8 +131,12 @@ public class CommandHandler {
         //User commands
 //        emCommand.registerCommand(new AdventurersGuildCommand());
         emCommand.registerCommand(new ShareItemCommand());
-        emCommand.registerCommand(new ShopDynamicCommand());
-        emCommand.registerCommand(new ShopCustomCommand());
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.economiaPropiaActiva()) {
+            emCommand.registerCommand(new ShopDynamicCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.economiaPropiaActiva()) {
+            emCommand.registerCommand(new ShopCustomCommand());
+        }
         emCommand.registerCommand(new RepairCommand());
         emCommand.registerCommand(new EnchantCommand());
         emCommand.registerCommand(new EliteScrollCommand());
@@ -125,10 +145,18 @@ public class CommandHandler {
         emCommand.registerCommand(new ScrapCommand());
         emCommand.registerCommand(new UnbindCommand());
         emCommand.registerCommand(new MoneyCheckCommand());
-        emCommand.registerCommand(new QuestAcceptCommand());
-        emCommand.registerCommand(new QuestCheckCommand());
-        emCommand.registerCommand(new QuestTrackCommand());
-        emCommand.registerCommand(new QuestLeaveCommand());
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestAcceptCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestCheckCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestTrackCommand());
+        }
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.misionesPropiasActivas()) {
+            emCommand.registerCommand(new QuestLeaveCommand());
+        }
         emCommand.registerCommand(new SkillSetCommand());
         emCommand.registerCommand(new SkillSetAllCommand());
         emCommand.registerCommand(new SkillCheckCommand());
@@ -147,7 +175,9 @@ public class CommandHandler {
         emCommand.registerCommand(new DungeonTeleportDialogCommand());
         emCommand.registerCommand(new TrackBossCommand());
         emCommand.registerCommand(new PayCommand());
-        emCommand.registerCommand(new AdventurersGuildArgCommand());
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.progresionPropiaActiva()) {
+            emCommand.registerCommand(new AdventurersGuildArgCommand());
+        }
         emCommand.registerCommand(new NPCQuestList());
         emCommand.registerCommand(new PartyCreateCommand());
         emCommand.registerCommand(new PartyInviteCommand());
@@ -162,7 +192,9 @@ public class CommandHandler {
         emCommand.registerCommand(new HelpCommand());
 
         adventurersGuildCommand =new CommandManager(MetadataHandler.PLUGIN, "adventurersguild");
-        adventurersGuildCommand.registerCommand(new AdventurersGuildCommand());
+        if (com.magmaguy.elitemobs.integrations.drakes.DrakesStandaloneModules.progresionPropiaActiva()) {
+            adventurersGuildCommand.registerCommand(new AdventurersGuildCommand());
+        }
     }
 
     private static List<EMPackage> nightbreakBulkPackages() {
