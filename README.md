@@ -7,6 +7,16 @@
 
 # EliteMobs
 
+> ### 🏰 ¡Únete a la Comunidad Oficial de DrakesCraft!
+> 
+> * 🎮 **IP del Servidor**: `play.drakescraft.net` *(Java 1.21.11 & Bedrock)*
+> * 💬 **Discord Oficial**: [discord.gg/drakescraft](https://discord.gg/rR7FbfCt9Y)
+> * 🌐 **Web & Guía**: [drakescraft.net](https://drakescraft.net) — 🛒 **Tienda**: [tienda.drakescraft.net](https://tienda.drakescraft.net)
+> 
+> *¡Juega con este addon y más de 80 expansiones optimizadas en vivo en nuestra network de supervivencia técnica!*
+
+---
+
 > **Fork DrakesCraft Labs.** Esta rama conserva la autoria y licencia GPL-3.0 de MagmaGuy y agrega una integracion
 > defensiva para Purpur 1.21.11. No reemplaza DrakesBosses, DiosesDrakes ni MultiverseCreatures.
 
